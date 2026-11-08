@@ -1,0 +1,4 @@
+# The web UI only: python -m ui.app
+# Kept separate so the core agent's supply chain stays small (see risk R9).
+-r requirements.txt
+gradio==6.31.0

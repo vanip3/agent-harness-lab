@@ -44,7 +44,7 @@ Cases: `evals/cases.json`. Raw results: `evals/results/`.
 
 ### 3. Controls are tested without the model
 
-43 automated tests (`pytest`, about a second, no model needed) force each attack directly: 7 path-escape attempts, calculator code injection, SQL injection, smuggled arguments, a forbidden role, a rejected approval, a runaway model. Breaking the path check on purpose makes 8 of them fail, which shows the tests can catch a broken control.
+46 automated tests (`pytest`, a few seconds, no model needed) force each attack directly: 7 path-escape attempts, calculator code injection, SQL injection, smuggled arguments, a forbidden role, a rejected approval, a runaway model. Breaking the path check on purpose makes 8 of them fail, which shows the tests can catch a broken control.
 
 ## Governance
 
@@ -82,6 +82,17 @@ python -m evals.run_evals --mode both --repeats 3
 python -m harness.trace
 ```
 
+**Web UI (optional):** a chat with a role dropdown, a live Activity panel showing every decision (tool ran, blocked and why, approval, injection warning, canary alarm), Approve/Reject buttons for proposals, and a demo switch that turns the guardrails off for one run only.
+
+```powershell
+pip install -r requirements-ui.txt
+python -m ui.app          # then open http://127.0.0.1:7860
+```
+
+Gradio is kept in a separate requirements file because it adds about 40 packages; the agent itself needs two.
+
+**See it in action:** [docs/DEMO.md](docs/DEMO.md) walks through six recorded scenarios with screenshots: a normal question, forbidden data, a rejected and an approved proposal, and the injection attack with the guardrails on and off.
+
 `--unguarded` switches off the sandbox and the untrusted-output markers **for the injection demo only**. It's off by default, prints a warning, and is recorded in the trace.
 
 ## Layout
@@ -93,6 +104,7 @@ python -m harness.trace
 | `sandbox/`, `skills/` | The only files `read_file` can reach; the skills the agent can load |
 | `evals/` | Eval cases, the runner and saved results |
 | `tests/` | The automated control tests |
+| `ui/` | The optional web UI |
 
 
 ## Limitations
