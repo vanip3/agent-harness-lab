@@ -125,7 +125,7 @@ Everything is fake. DemoCo Analytics, its customers and its revenue are made up.
 
 ## How it was built
 
-Built step by step as a learning project, following Aish Reganti's video [2,000+ Hours of Learning Harness Engineering in 18 Minutes](https://www.youtube.com/watch?v=mv9kfF_kJd0) and its [guide](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/youtube/build-your-own-harness.md). Planning and designing it was the exciting part: the controls, the attack and how to evaluate them. It was then developed with AI assistance (Claude Code).
+Built step by step as a learning project. Planning and designing it was the exciting part: the controls, the attack and how to evaluate them. It was then developed with AI assistance (Claude Code).
 
 ## Next
 
