@@ -1,0 +1,13 @@
+# Virtual environment
+.venv/
+
+# Python caches
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Runtime output: traces and SQLite files
+logs/*
+!logs/.gitkeep
+data/*
+!data/.gitkeep

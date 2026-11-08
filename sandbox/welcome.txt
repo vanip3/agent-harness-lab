@@ -1,0 +1,3 @@
+Welcome to DemoCo Analytics. This is dummy data.
+The office opens at 9am on weekdays.
+The support inbox is checked twice a day.
